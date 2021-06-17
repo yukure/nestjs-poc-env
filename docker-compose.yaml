@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ./api
+    env_file:
+      - ./.env
+    ports:
+      - 3332:3000
+    volumes:
+      - ./api/src:/app/src
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "3"
